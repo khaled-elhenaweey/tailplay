@@ -1,5 +1,8 @@
-<div class="grid min-h-screen grid-cols-[200px_1fr] grid-rows-[88px_1fr_48px]"
-  style="grid-template-areas: 'header header' 'sidebar main' 'footer footer';">
+<div class="grid min-h-screen grid-cols-1 grid-rows-[auto_auto_1fr_48px]
+      [grid-template-areas:'header'_'sidebar'_'main'_'footer']
+      md:grid-cols-[200px_1fr] md:grid-rows-[88px_1fr_48px]
+      md:[grid-template-areas:'header_header'_'sidebar_main'_'footer_footer']
+      ">
 
   <header class="flex flex-col items-start gap-2 bg-brand-500 px-6 py-4 text-white" style="grid-area: header;">
     <a routerLink="/" class="text-sm text-brand-600 bg-neutral-100/50 px-2 py-1 rounded-sm hover:bg-neutral-100/75">
@@ -9,7 +12,7 @@
   </header>
 
   <aside class="bg-neutral-200 p-4" style="grid-area: sidebar;">
-    <nav class="flex flex-col gap-2 text-sm text-neutral-700">
+    <nav class="flex flex-row flex-wrap md:flex-col gap-2 text-sm text-neutral-700">
       <span class="hover:bg-neutral-300/60 p-2 rounded-sm cursor-pointer">Sidebar Link 1</span>
       <span class="hover:bg-neutral-300/60 p-2 rounded-sm cursor-pointer">Sidebar Link 2</span>
       <span class="hover:bg-neutral-300/60 p-2 rounded-sm cursor-pointer">Sidebar Link 3</span>
