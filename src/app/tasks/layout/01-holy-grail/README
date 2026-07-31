@@ -1,0 +1,26 @@
+# Task 01 — Holy Grail Layout
+
+**Category:** Layout & Structure
+**Difficulty:** above-average
+**Style school:** Minimalism
+
+## The problem
+
+A classic header/sidebar/footer/main layout that must stay solid at every screen
+size and with any amount of main content.
+
+## Constraints
+
+- Grid Template Areas only — no Flex-box allowed for the primary layout.
+- The footer must stay pinned to the bottom even when main content is short.
+
+## Key implementation decisions
+
+- Used `grid-template-areas` via an inline `style` attribute, since Tailwind v4
+  has no dedicated utility class for naming template areas.
+- Sidebar width is fixed (`200px`) and the main column takes the remaining
+  space (`1fr`) so the layout never breaks when content changes.
+- The back-to-home link lives inside the header itself (not `absolute`), so it
+  takes up real space in the grid instead of floating over other content.
+- Flex-box is still used _inside_ the sidebar nav — the constraint only applies
+  to the four main regions, not their internal content.

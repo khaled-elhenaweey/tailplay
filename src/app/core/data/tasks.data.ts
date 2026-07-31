@@ -14,7 +14,7 @@ export const TASKS: Task[] = [
     category: 'Layout & Structure',
     styleSchool: 'Minimalism',
     route: '/tasks/01-holy-grail',
-    completed: false,
+    completed: true,
   },
   {
     id: 2,
