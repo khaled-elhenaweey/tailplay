@@ -1,11 +1,32 @@
-<div class="min-h-screen bg-neutral-50 p-6 font-sans">
-  <a routerLink="/" class="text-sm text-brand-500 hover:underline">
+<div class="min-h-screen font-sans">
+  <a routerLink="/"
+    class="absolute left-4 top-2 text-sm text-brand-600 bg-neutral-100/50 px-2 py-1 rounded-sm hover:bg-neutral-100/75">
     ← Back to all tasks
   </a>
-  <h1 class="mt-4 text-2xl font-bold text-neutral-900">
-    Task #01 — Holy Grail Layout
-  </h1>
-  <p class="mt-2 text-neutral-500">
-    This is a placeholder. The real challenge is built next.
-  </p>
+
+  <div class="grid min-h-screen grid-cols-[200px_1fr] grid-rows-[100px_1fr_48px]"
+    style="grid-template-areas: 'header header' 'sidebar main' 'footer footer';">
+
+    <header class="flex items-center bg-brand-500 px-6 py-4 text-white" style="grid-area: header;">
+      <span class="font-semibold">Header</span>
+    </header>
+
+    <aside class="bg-neutral-200 p-4" style="grid-area: sidebar;">
+      <nav class="flex flex-col gap-2 text-sm text-neutral-700">
+        <span class="hover:bg-neutral-300/60 p-2 rounded-sm cursor-pointer">Sidebar Link 1</span>
+        <span class="hover:bg-neutral-300/60 p-2 rounded-sm cursor-pointer">Sidebar Link 2</span>
+        <span class="hover:bg-neutral-300/60 p-2 rounded-sm cursor-pointer">Sidebar Link 3</span>
+      </nav>
+    </aside>
+
+    <main class="bg-neutral-100 p-6" style="grid-area: main;">
+      <h1 class="text-xl font-bold text-neutral-900">Main Content</h1>
+      <p class="mt-2 text-neutral-500">
+        This area grows or shrinks with its content, and the layout must stay solid either way.
+      </p>
+    </main>
+    <footer class="flex items-center justify-center bg-brand-500 text-sm text-white" style="grid-area: footer;">
+      Footer
+    </footer>
+  </div>
 </div>
