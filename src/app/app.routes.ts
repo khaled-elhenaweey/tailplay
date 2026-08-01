@@ -13,4 +13,11 @@ export const routes: Routes = [
     path: 'tasks/02-bento-grid',
     loadComponent: () => import('./tasks/layout/bento-grid/bento-grid').then((m) => m.BentoGrid),
   },
+  {
+    path: 'tasks/03-equal-height-cards',
+    loadComponent: () =>
+      import('./tasks/layout/equal-height-cards/equal-height-cards').then(
+        (m) => m.EqualHeightCards,
+      ),
+  },
 ];

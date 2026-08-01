@@ -1,0 +1,29 @@
+# Task 03 — Equal-Height Cards
+
+**Category:** Layout & Structure
+**Difficulty:** above-average
+**Style school:** Corporate SaaS
+
+## The problem
+
+Cards sitting side by side with uneven content lengths, where each card's
+footer (a button, in this case) must still line up across all cards.
+
+## Constraints
+
+- No JavaScript height calculation of any kind — pure CSS only.
+
+## Key implementation decisions
+
+- Each `<article>` card is `flex flex-col`, and the description paragraph
+  inside it gets `flex-1`. This makes the paragraph absorb all the leftover
+  vertical space inside its own card, pushing the button to the bottom
+  regardless of how long or short the description text is.
+- The three cards are equal height for free: they're grid items in the same
+  row, and CSS Grid stretches items in a row to match the tallest one by
+  default — no extra utility needed for that part.
+- Colors come entirely from the `brand-*` / `neutral-*` token scale.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_
