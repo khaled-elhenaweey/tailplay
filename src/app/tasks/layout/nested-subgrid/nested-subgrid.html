@@ -1,0 +1,22 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #06 — Nested Subgrid Alignment
+  </h1>
+  <div class="grid grid-cols-[1fr_80px_100px] gap-y-6 max-w-2xl mx-auto">
+    @for (order of orders; track order.id) {
+    <div class="col-span-3 grid grid-cols-subgrid gap-y-2 rounded-xl bg-white p-4 shadow-sm">
+      <p class="col-span-3 mb-3 text-sm font-semibold text-neutral-900">
+        {{order.id}} - {{order.customer}}
+      </p>
+      @for (line of order.lines; track line.item) {
+      <span class="text-sm text-neutral-700">{{line.item}}</span>
+      <span class="text-sm text-neutral-500">{{line.qty}}</span>
+      <span class="text-sm font-medium text-neutral-900">{{line.price}}</span>
+      }
+    </div>
+    }
+  </div>
+</div>

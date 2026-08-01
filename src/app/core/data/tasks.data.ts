@@ -61,7 +61,7 @@ export const TASKS: Task[] = [
     category: 'Layout & Structure',
     styleSchool: 'Neubrutalism',
     route: '/tasks/06-nested-subgrid',
-    completed: false,
+    completed: true,
   },
 
   // ===== Data Display =====

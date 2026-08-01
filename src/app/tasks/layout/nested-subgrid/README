@@ -1,0 +1,33 @@
+# Task 06 — Nested Subgrid Alignment
+
+**Category:** Layout & Structure
+**Difficulty:** near-senior
+**Style school:** Neubrutalism
+
+## The problem
+
+Two nested tables (an order and its line items) whose columns must align
+perfectly across two levels of nesting, even when the content length and the
+number of rows differ between them.
+
+## Constraints
+
+- Must use `subgrid` — column widths cannot be recalculated independently by
+  each nested grid.
+
+## Key implementation decisions
+
+- The outer grid defines the real column tracks once:
+  `grid-cols-[1fr_80px_100px]` (item / qty / price).
+- Each order card spans all 3 outer columns as a single row
+  (`col-span-3`), acting as a container for its own line items.
+- The inner grid uses `grid-cols-subgrid col-span-3` instead of defining new
+  columns of its own — this makes it inherit the exact same 3 column tracks
+  from the outer grid, by reference, not by recalculation.
+- Order data was deliberately chosen with very different item name lengths
+  and a different number of line items per order, so any misalignment would
+  be immediately visible if subgrid weren't working correctly.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

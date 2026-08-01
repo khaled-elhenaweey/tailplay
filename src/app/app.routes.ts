@@ -32,4 +32,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/layout/masonry-gallery/masonry-gallery').then((m) => m.MasonryGallery),
   },
+  {
+    path: 'tasks/06-nested-subgrid',
+    loadComponent: () =>
+      import('./tasks/layout/nested-subgrid/nested-subgrid').then((m) => m.NestedSubgrid),
+  },
 ];
