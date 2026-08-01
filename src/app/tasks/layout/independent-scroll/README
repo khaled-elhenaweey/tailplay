@@ -1,0 +1,33 @@
+# Task 04 — Independent Scroll Sidebar
+
+**Category:** Layout & Structure
+**Difficulty:** advanced
+**Style school:** Minimalism
+
+## The problem
+
+A fixed sidebar and a main content area that scroll independently of each
+other — the sidebar stays visible while the main content scrolls on its own.
+
+## Constraints
+
+- Only `sticky` and `overflow` may be used to achieve this — no
+  `position: fixed`.
+
+## Key implementation decisions
+
+- The sidebar uses `sticky top-0 h-screen overflow-y-auto`, but only from
+  `md:` up. `sticky` keeps it pinned during scroll without removing it from
+  the document flow (unlike `fixed`), `h-screen` gives it a fixed viewport
+  height, and `overflow-y-auto` lets the sidebar itself scroll independently
+  if its own content grows taller than the screen.
+- On mobile, none of that applies (`grid-cols-1` stacks the sidebar above the
+  main content), so `sticky`/`h-screen` are scoped behind `md:` — applying
+  them unconditionally would make the sidebar awkwardly pin itself across
+  the full mobile viewport instead of behaving like normal stacked content.
+- `fillerItems` is a simple generated array used only to produce enough
+  content blocks to make the page tall enough to actually test scrolling.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

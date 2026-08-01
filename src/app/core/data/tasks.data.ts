@@ -31,7 +31,7 @@ export const TASKS: Task[] = [
     category: 'Layout & Structure',
     styleSchool: 'Corporate SaaS',
     route: '/tasks/03-equal-height-cards',
-    completed: false,
+    completed: true,
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const TASKS: Task[] = [
     category: 'Layout & Structure',
     styleSchool: 'Minimalism',
     route: '/tasks/04-independent-scroll',
-    completed: false,
+    completed: true,
   },
   {
     id: 5,

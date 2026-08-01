@@ -1,0 +1,20 @@
+<div class="min-h-screen grid grid-cols-1 md:grid-cols-[200px_1fr]">
+  <aside class="md:sticky top-0 md:h-screen overflow-y-auto bg-neutral-200 p-4">
+    <a routerLink="/" class="text-sm text-brand-600 hover:underline">← Back to all tasks</a>
+    <nav class="mt-6 flex flex-wrap md:flex-col gap-2 text-sm text-neutral-700">
+      <span class="rounded-sm p-2 hover:bg-neutral-300/60 cursor-pointer">Sidebar stays put</span>
+      <span class="rounded-sm p-2 hover:bg-neutral-300/60 cursor-pointer">While main scrolls</span>
+      <span class="rounded-sm p-2 hover:bg-neutral-300/60 cursor-pointer">Independently</span>
+    </nav>
+  </aside>
+  <main class="bg-neutral-50 p-6">
+    <h1 class="mb-6 text-2xl font-bold text-neutral-900">
+      Task #04 — Independent Scroll Sidebar
+    </h1>
+    @for (item of fillerItems; track item) {
+    <div class="mb-4 rounded-xl bg-white p-6 shadow-sm">
+      <p class="text-sm text-neutral-500">{{ item }}</p>
+    </div>
+    }
+  </main>
+</div>

@@ -20,4 +20,11 @@ export const routes: Routes = [
         (m) => m.EqualHeightCards,
       ),
   },
+  {
+    path: 'tasks/04-independent-scroll',
+    loadComponent: () =>
+      import('./tasks/layout/independent-scroll/independent-scroll').then(
+        (m) => m.IndependentScroll,
+      ),
+  },
 ];
