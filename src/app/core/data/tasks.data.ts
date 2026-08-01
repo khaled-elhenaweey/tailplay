@@ -51,7 +51,7 @@ export const TASKS: Task[] = [
     category: 'Layout & Structure',
     styleSchool: 'Editorial',
     route: '/tasks/05-masonry-gallery',
-    completed: false,
+    completed: true,
   },
   {
     id: 6,

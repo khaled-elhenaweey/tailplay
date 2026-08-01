@@ -1,0 +1,33 @@
+# Task 05 — Masonry Gallery
+
+**Category:** Layout & Structure
+**Difficulty:** near-senior
+**Style school:** Editorial
+
+## The problem
+
+A Pinterest-style image gallery with tiles of different heights that packs
+together with no visual gaps, built without any JS masonry library.
+
+## Constraints
+
+- Pure CSS Grid dense packing only — no JavaScript layout calculation and no
+  third-party masonry library.
+
+## Key implementation decisions
+
+- The grid uses `[grid-auto-flow:dense]`, an arbitrary property. Dense
+  packing tells the grid to backfill any empty cell it can find instead of
+  strictly placing items in source order — this is what produces the
+  masonry look without any JS.
+- `[grid-auto-rows:80px]` defines a fixed row unit. Each tile's `rowSpan`
+  (1 to 3) multiplies against that unit via `[style.grid-row]="'span ' +
+tile.rowSpan"`, simulating images of different natural heights.
+- Tile colors come from the token scale and are stored as full class name
+  strings directly in the `tiles` array (e.g. `'bg-brand-300'`) — not built
+  dynamically from a variable — so the Tailwind scanner can detect them as
+  literal text in the `.ts` file it already scans.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

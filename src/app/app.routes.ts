@@ -27,4 +27,9 @@ export const routes: Routes = [
         (m) => m.IndependentScroll,
       ),
   },
+  {
+    path: 'tasks/05-masonry-gallery',
+    loadComponent: () =>
+      import('./tasks/layout/masonry-gallery/masonry-gallery').then((m) => m.MasonryGallery),
+  },
 ];

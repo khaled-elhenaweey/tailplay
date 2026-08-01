@@ -1,0 +1,15 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #05 — Masonry Gallery
+  </h1>
+  <div class="h-[calc(100vh-10rem)] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 grid-flow-dense">
+    @for (tile of tiles; track tile.id) {
+    <div class="rounded-lg flex justify-center items-center text-5xl text-brand-50  {{tile.color}} {{tile.rowSpan}}">
+      {{tile.id}}
+    </div>
+    }
+  </div>
+</div>
