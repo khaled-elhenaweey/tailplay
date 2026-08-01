@@ -1,8 +1,5 @@
-// src/app/core/data/tasks.data.ts
-
 import { Task } from '../models/task';
 
-// The full list of 60 tasks — single source of truth for the home page grid.
 export const TASKS: Task[] = [
   // ===== Layout & Structure =====
   {
@@ -24,7 +21,7 @@ export const TASKS: Task[] = [
     category: 'Layout & Structure',
     styleSchool: 'Material Design 3',
     route: '/tasks/02-bento-grid',
-    completed: false,
+    completed: true,
   },
   {
     id: 3,

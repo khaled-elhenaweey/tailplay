@@ -1,0 +1,36 @@
+# Task 02 — Bento Grid Dashboard
+
+**Category:** Layout & Structure
+**Difficulty:** advanced
+**Style school:** Material Design 3
+
+## The problem
+
+A dashboard with unevenly sized cells (a Bento-style grid) that stays visually
+organized instead of chaotic, with one larger cell highlighting the most
+important stat.
+
+## Constraints
+
+- All cell sizes are set with `grid-column`/`grid-row` spans only — no fixed
+  pixel widths or heights anywhere.
+- The layout must look intentionally different at three sizes (mobile,
+  tablet, desktop), not just "not broken."
+
+## Key implementation decisions
+
+- Three explicit breakpoints (`base`, `md`, `lg`) each get their own
+  `col-span`/`row-span` values per card, producing a genuinely different
+  arrangement at each size instead of one layout that just reflows.
+- `grid-rows-3` (explicit, fixed row count) is only applied from `md:` up.
+  On mobile the grid uses `grid-rows-none` so the browser generates implicit
+  rows sized to each card's natural content height — with an explicit row
+  count, the 5th card (the wide summary panel) would get squeezed into a
+  shared row with "Bounce Rate" and inherit its shorter height instead of
+  its own.
+- Colors come entirely from the `brand-*` / `neutral-*` token scale — no
+  default Tailwind palette colors used.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_
