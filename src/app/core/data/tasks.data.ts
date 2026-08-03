@@ -73,7 +73,7 @@ export const TASKS: Task[] = [
     category: 'Data Display',
     styleSchool: 'Corporate SaaS',
     route: '/tasks/07-responsive-table',
-    completed: false,
+    completed: true,
   },
   {
     id: 8,

@@ -37,4 +37,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/layout/nested-subgrid/nested-subgrid').then((m) => m.NestedSubgrid),
   },
+  {
+    path: 'tasks/07-responsive-table',
+    loadComponent: () =>
+      import('./tasks/data-display/responsive-table/responsive-table').then(
+        (m) => m.ResponsiveTable,
+      ),
+  },
 ];

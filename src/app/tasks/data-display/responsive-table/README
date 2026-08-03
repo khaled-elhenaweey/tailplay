@@ -1,0 +1,35 @@
+# Task 07 — Responsive Data Table
+
+**Category:** Data Display
+**Difficulty:** above-average
+**Style school:** Corporate SaaS
+
+## The problem
+
+A data table that must turn into a card-style layout on mobile without
+duplicating the markup for two different views.
+
+## Constraints
+
+- The exact same HTML structure (`<table>`, `<thead>`, `<tbody>`, `<tr>`,
+  `<td>`) is used at every screen size — the transformation happens entirely
+  through Tailwind display/responsive utilities.
+
+## Key implementation decisions
+
+- `<thead>` is `hidden` on mobile and becomes `md:table-header-group` on
+  larger screens, since a real table header isn't needed once each row turns
+  into its own card.
+- Each `<tr>` switches from `block` (a plain stacked box, giving the "card"
+  look) to `md:table-row` for the real table layout.
+- Since the mobile view has no visible column headers, each `<td>` injects a
+  label before its value using a CSS pseudo-element:
+  `before:content-['Name:_']`, disabled again on desktop with
+  `md:before:content-none` since the real header already provides that
+  label there.
+- Status is shown as a colored pill using the `brand-*`/`neutral-*` token
+  scale via conditional class bindings, not raw default Tailwind colors.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

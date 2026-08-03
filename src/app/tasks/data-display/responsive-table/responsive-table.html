@@ -1,0 +1,45 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #07 — Responsive Data Table
+  </h1>
+  <table class="w-full max-w-3xl border-collapse overflow-hidden rounded-xl md:shadow-sm">
+    <thead class="hidden bg-neutral-100 md:table-header-group">
+      <tr>
+        <th class="p-4 text-left text-sm font-semibold text-neutral-700">Name</th>
+        <th class="p-4 text-left text-sm font-semibold text-neutral-700">Role</th>
+        <th class="p-4 text-left text-sm font-semibold text-neutral-700">Department</th>
+        <th class="p-4 text-left text-sm font-semibold text-neutral-700">Status</th>
+      </tr>
+    </thead>
+    <tbody class="block md:table-row-group">
+      @for (employee of employees; track employee.name) {
+      <tr
+        class="mb-4 block rounded-xl border border-neutral-200 p-4 md:mb-0 md:table-row md:rounded-none md:border-0 md:border-t md:p-0 bg-white md:hover:bg-neutral-50">
+        <td
+          class="block p-1 text-sm before:font-semibold before:text-neutral-500 before:content-['Name:'] md:table-cell md:p-4 md:before:content-none">
+          {{ employee.name }}
+        </td>
+        <td
+          class="block p-1 text-sm before:font-semibold before:text-neutral-500 before:content-['Role:'] md:table-cell md:p-4 md:before:content-none">
+          {{ employee.role }}
+        </td>
+        <td
+          class="block p-1 text-sm before:font-semibold before:text-neutral-500 before:content-['Department:'] md:table-cell md:p-4 md:before:content-none">
+          {{ employee.department }}
+        </td>
+        <td class="block p-1 text-sm md:table-cell md:p-4">
+          <span class="rounded-full px-2 py-0.5 text-sm" [class.bg-brand-100]="employee.status === 'Active'"
+            [class.text-brand-700]="employee.status === 'Active'"
+            [class.bg-neutral-200]="employee.status === 'On Leave'"
+            [class.text-neutral-700]="employee.status === 'On Leave'">
+            {{ employee.status }}
+          </span>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
