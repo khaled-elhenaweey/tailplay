@@ -83,7 +83,7 @@ export const TASKS: Task[] = [
     category: 'Data Display',
     styleSchool: 'Minimalism',
     route: '/tasks/08-sticky-pricing-table',
-    completed: false,
+    completed: true,
   },
   {
     id: 9,

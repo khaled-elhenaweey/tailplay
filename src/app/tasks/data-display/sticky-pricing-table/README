@@ -1,0 +1,35 @@
+# Task 08 — Sticky-Column Pricing Table
+
+**Category:** Data Display
+**Difficulty:** advanced
+**Style school:** Minimalism
+
+## The problem
+
+A pricing comparison table with many plan columns, where the leftmost
+"Feature" column must stay visible while the rest of the table scrolls
+horizontally.
+
+## Constraints
+
+- Only one column (`Feature`) is sticky, inside a table that scrolls
+  horizontally as a whole.
+
+## Key implementation decisions
+
+- `overflow-x-auto` on the outer wrapper enables horizontal scrolling once
+  the plan columns exceed the available width.
+- The first `<th>`/`<td>` in every row gets `sticky left-0`, pinning it to
+  the left edge of the scroll container during scroll.
+- `z-10` is required on the sticky column, not just for polish — without it,
+  the other columns' content would visually scroll on top of the pinned
+  column instead of staying underneath it.
+- The sticky column also needs an explicit background (`bg-white` /
+  `bg-neutral-100`) — `sticky` doesn't prevent transparency, so without a
+  background the scrolling columns would show through underneath it.
+- `min-w-[140px]` on the plan columns guarantees genuine horizontal scrolling
+  instead of columns just shrinking to fit.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

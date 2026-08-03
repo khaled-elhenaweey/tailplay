@@ -44,4 +44,11 @@ export const routes: Routes = [
         (m) => m.ResponsiveTable,
       ),
   },
+  {
+    path: 'tasks/08-sticky-pricing-table',
+    loadComponent: () =>
+      import('./tasks/data-display/sticky-pricing-table/sticky-pricing-table').then(
+        (m) => m.StickyPricingTable,
+      ),
+  },
 ];
