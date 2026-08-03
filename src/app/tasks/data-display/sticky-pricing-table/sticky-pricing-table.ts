@@ -10,7 +10,7 @@ interface Feature {
 }
 @Component({
   selector: 'app-task-08',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './sticky-pricing-table.html',
   styleUrl: './sticky-pricing-table.css',
 })
