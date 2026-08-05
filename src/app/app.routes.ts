@@ -51,4 +51,11 @@ export const routes: Routes = [
         (m) => m.StickyPricingTable,
       ),
   },
+  {
+    path: 'tasks/09-dense-admin-table',
+    loadComponent: () =>
+      import('./tasks/data-display/dense-admin-table/dense-admin-table').then(
+        (m) => m.DenseAdminTable,
+      ),
+  },
 ];

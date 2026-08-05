@@ -93,7 +93,7 @@ export const TASKS: Task[] = [
     category: 'Data Display',
     styleSchool: 'Corporate SaaS',
     route: '/tasks/09-dense-admin-table',
-    completed: false,
+    completed: true,
   },
   {
     id: 10,

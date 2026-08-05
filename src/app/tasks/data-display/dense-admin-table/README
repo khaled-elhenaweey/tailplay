@@ -1,0 +1,32 @@
+# Task 09 — Dense Admin Table
+
+**Category:** Data Display
+**Difficulty:** advanced
+**Style school:** Corporate SaaS
+
+## The problem
+
+A data-heavy admin table (an activity log) with alternating row colors and a
+clear hover state, common in any real admin panel.
+
+## Constraints
+
+- Zebra striping must be done with a single `nth-child(odd)` arbitrary
+  variant — no per-row class added manually to each `<tr>`.
+
+## Key implementation decisions
+
+- `[&>*:nth-child(odd)]:bg-neutral-50` is applied once, on the `<tbody>`
+  itself. `&` refers to the tbody, `>*` targets its direct children, and
+  `:nth-child(odd)` selects only the odd-positioned rows — one class handles
+  striping for any number of rows, current or future.
+- `hover:bg-brand-50` is applied per `<tr>` and overrides the zebra color on
+  hover naturally, since it targets the row element directly rather than
+  competing with the tbody-level rule.
+- Log data is generated with a fixed, deterministic pattern (`Array.from`
+  with modulo logic) rather than random values, so the table's appearance is
+  reproducible between runs.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

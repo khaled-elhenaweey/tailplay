@@ -1,0 +1,47 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #09 — Dense Admin Table
+  </h1>
+  <div class="max-w-3xl overflow-hidden rounded-xl bg-white shadow-sm">
+    <table class="w-full border-collapse">
+      <thead class="bg-neutral-100">
+        <tr>
+          <th class="p-3 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500">
+            Log ID
+          </th>
+          <th class="p-3 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500">
+            User
+          </th>
+          <th class="p-3 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500">
+            Action
+          </th>
+          <th class="p-3 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500">
+            Timestamp
+          </th>
+        </tr>
+      </thead>
+      <tbody class="[&>*:nth-child(odd)]:bg-neutral-50">
+        @for (log of logs; track log.id) {
+        <tr class="hover:bg-brand-50!">
+          <td class="p-3 text-sm text-neutral-500">
+            {{log.id}}
+          </td>
+          <td class="p-3 text-sm font-medium text-neutral-900">
+            {{log.user}}
+          </td>
+          <td class="p-3 text-sm text-neutral-700">
+            {{log.action}}
+          </td>
+          <td class="p-3 text-sm text-neutral-500">
+            {{log.timestamp}}
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+</div>
