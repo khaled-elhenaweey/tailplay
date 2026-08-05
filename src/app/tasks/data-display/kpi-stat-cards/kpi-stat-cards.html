@@ -1,0 +1,14 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #10 — KPI Stat Cards
+  </h1>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4">
+    @for (stat of stats; track stat.label) {
+    <app-stat-card [label]="stat.label" [value]="stat.value" [trend]="stat.trend"
+      [trendLabel]="stat.trendLabel"></app-stat-card>
+    }
+  </div>
+</div>

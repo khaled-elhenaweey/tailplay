@@ -104,7 +104,7 @@ export const TASKS: Task[] = [
     category: 'Data Display',
     styleSchool: 'Material Design 3',
     route: '/tasks/10-kpi-stat-cards',
-    completed: false,
+    completed: true,
   },
   {
     id: 11,

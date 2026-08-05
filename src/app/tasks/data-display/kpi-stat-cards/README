@@ -1,0 +1,32 @@
+# Task 10 — KPI Stat Cards
+
+**Category:** Data Display
+**Difficulty:** above-average
+**Style school:** Material Design 3
+
+## The problem
+
+A grid of stat cards (number + trend indicator) that stays visually
+consistent across a dashboard, no matter how many stats are shown.
+
+## Constraints
+
+- Every card must render from the same reusable component with different
+  inputs — no copy-pasted card markup per stat.
+
+## Key implementation decisions
+
+- Introduced the project's first shared component: `shared/ui/stat-card`.
+  It exposes `label`, `value`, `trend`, and `trendLabel` as signal-based
+  inputs (`input()` / `input.required()`), matching the same reactive style
+  used throughout the project (signals/computed) instead of the older
+  `@Input()` decorator.
+- `trend` defaults to `'flat'` and drives conditional styling (`up` = brand
+  color with an up arrow, `down` = muted color with a down arrow) purely via
+  class bindings — no separate component variant needed per trend direction.
+- The trend line is wrapped in `@if (trendLabel())` so a future card with no
+  trend data at all doesn't render an empty, awkwardly spaced line.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

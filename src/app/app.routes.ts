@@ -58,4 +58,9 @@ export const routes: Routes = [
         (m) => m.DenseAdminTable,
       ),
   },
+  {
+    path: 'tasks/10-kpi-stat-cards',
+    loadComponent: () =>
+      import('./tasks/data-display/kpi-stat-cards/kpi-stat-cards').then((m) => m.KpiStatCards),
+  },
 ];

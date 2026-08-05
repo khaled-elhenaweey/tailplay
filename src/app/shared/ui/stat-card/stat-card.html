@@ -1,0 +1,19 @@
+<div class="rounded-xl bg-white p-5 shadow-sm hover:shadow-md transition-colors hover:bg-brand-50">
+  <p class="text-sm text-neutral-500">
+    {{ label()}}
+  </p>
+  <p class="mt-2 text-2xl font-bold text-neutral-900">
+    {{ value()}}
+  </p>
+  @if (trendLabel()) {
+  <p class="mt-1 text-xs" [class.text-brand-600]="trend()==='up'" [class.text-neutral-400]="trend()==='down'"
+    [class.text-neutral-600]="trend()==='flat'">
+    @if(trend()==='up'){
+    ↑
+    }@else if(trend()==='down'){
+    ↓
+    }
+    {{ trendLabel() }}
+  </p>
+  }
+</div>
