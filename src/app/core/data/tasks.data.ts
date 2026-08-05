@@ -114,7 +114,7 @@ export const TASKS: Task[] = [
     category: 'Data Display',
     styleSchool: 'Neo-Retro',
     route: '/tasks/11-kanban-board',
-    completed: false,
+    completed: true,
   },
   {
     id: 12,

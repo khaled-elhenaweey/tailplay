@@ -1,0 +1,32 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #11 — Kanban Board
+  </h1>
+  <div class="flex gap-4 overflow-x-auto pb-4 [scroll-snap-type:x_mandatory]">
+    @for (column of columns; track column.title) {
+    <div class="w-72 shrink-0 grow rounded-xl bg-neutral-100 p-3 [scroll-snap-aling:start]">
+      <p class="mb-3 px-1 text-sm font-semibold text-neutral-700">
+        {{column.title}}
+        <span class="ml-1 text-neutral-400">
+          ({{column.cards.length}})
+        </span>
+      </p>
+      <div class="flex flex-col gap-2">
+        @for (card of column.cards; track card.title) {
+        <div class="rounded-lg bg-white p-3 shadow-sm">
+          <p class="text-sm text-neutral-900">
+            {{card.title}}
+          </p>
+          <span class="mt-2 inline-block rounded-full bg-brand-100 px-2 py-0.5 text-xs text-brand-700">
+            {{card.tag}}
+          </span>
+        </div>
+        }
+      </div>
+    </div>
+    }
+  </div>
+</div>

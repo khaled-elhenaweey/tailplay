@@ -63,4 +63,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/data-display/kpi-stat-cards/kpi-stat-cards').then((m) => m.KpiStatCards),
   },
+  {
+    path: 'tasks/11-kanban-board',
+    loadComponent: () =>
+      import('./tasks/data-display/kanban-board/kanban-board').then((m) => m.KanbanBoard),
+  },
 ];
