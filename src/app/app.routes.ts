@@ -68,4 +68,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/data-display/kanban-board/kanban-board').then((m) => m.KanbanBoard),
   },
+  {
+    path: 'tasks/12-activity-timeline',
+    loadComponent: () =>
+      import('./tasks/data-display/activity-timeline/activity-timeline').then(
+        (m) => m.ActivityTimeline,
+      ),
+  },
 ];

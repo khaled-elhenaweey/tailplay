@@ -124,7 +124,7 @@ export const TASKS: Task[] = [
     category: 'Data Display',
     styleSchool: 'Editorial',
     route: '/tasks/12-activity-timeline',
-    completed: false,
+    completed: true,
   },
 
   // ===== State & Feedback =====

@@ -1,0 +1,31 @@
+# Task 12 — Vertical Activity Timeline
+
+**Category:** Data Display
+**Difficulty:** near-senior
+**Style school:** Editorial
+
+## The problem
+
+An activity feed (order status history) with a connecting vertical line
+between events, drawn purely with CSS.
+
+## Constraints
+
+- The connecting line must be a `::before`/`::after` pseudo-element only —
+  no extra HTML element or image/SVG.
+
+## Key implementation decisions
+
+- `before:content-['']` is required for the pseudo-element to render at all
+  — without an explicit `content` value, `::before` doesn't generate by
+  CSS default.
+- The line itself (`before:absolute ... before:w-px before:bg-neutral-300`)
+  runs from just below each event's dot to the bottom of its container.
+- `last:before:hidden` removes the line after the final event automatically,
+  using Tailwind's `last:` variant (built on CSS `:last-child`) instead of
+  tracking the last item manually in the component with `$last` from the
+  `@for` loop — no extra Angular logic needed for a purely visual rule.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

@@ -1,0 +1,27 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #12 — Vertical Activity Timeline
+  </h1>
+  <div class="max-w-md">
+    @for (event of events; track event.title) {
+    <div class="relative pb-6 pl-8 last:pb-0
+                before:absolute before:left-1.5 before:top-4 before:bottom-0 before:w-px
+              before:bg-neutral-300 before:content-[''] last:before:hidden">
+      <span class="absolute left-0 top-1 h-3 w-3 rounded-full bg-brand-500"></span>
+      <p class="text-sm font-semibold text-neutral-900">
+        {{event.title}}
+      </p>
+      <p class="text-xs  text-neutral-400">
+        {{event.time}}
+      </p>
+      <p class="mt-1 text-sm text-neutral-500">
+        {{event.description}}
+      </p>
+    </div>
+    }
+  </div>
+
+</div>
