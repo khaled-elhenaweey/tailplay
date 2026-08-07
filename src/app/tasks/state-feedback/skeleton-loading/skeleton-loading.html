@@ -1,0 +1,37 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <div class="my-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold text-neutral-900">Task #13 — Skeleton Loading Screens</h1>
+    <button type="button" (click)="toggleLoading()"
+      class="rounded-lg bg-brand-500 px-4 py-2 text-sm text-white hover:bg-brand-600">
+      Toggle loading state
+    </button>
+  </div>
+
+  <div class="max-w-sm rounded-xl bg-white p-5 shadow-sm">
+    @if (isLoading()) {
+    <div
+      class="h-32 w-full animate-pulse rounded-lg bg-neutral-200 [background:linear-gradient(90deg,var(--color-neutral-200)_25%,var(--color-neutral-100)_50%,var(--color-neutral-200)_75%)] bg-size-[200%_100%]">
+    </div>
+    <div class="mt-4 h-4 w-3/4 animate-pulse rounded bg-neutral-200"></div>
+    <div class="mt-2 h-3 w-1/2 animate-pulse rounded bg-neutral-200"></div>
+    <div class="mt-4 h-8 w-24 animate-pulse rounded-lg bg-neutral-200"></div>
+    }@else {
+    <div class="flex h-32 w-full items-center justify-center rounded-lg bg-brand-700 text-neutral-100">
+      Product Photo
+    </div>
+    <p class="mt-4 text-lg font-semibold text-neutral-900">
+      Wireless Keyboard
+    </p>
+    <p class="mt-1 text-sm text-neutral-500">
+      In stock - ships in 1-2 business days
+    </p>
+    <button class="mt-4 rounded-lg bg-brand-500 px-4 py-2 text-sm text-white hover:bg-brand-600">
+      Add to Cart
+    </button>
+    }
+  </div>
+
+</div>

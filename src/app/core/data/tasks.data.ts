@@ -136,7 +136,7 @@ export const TASKS: Task[] = [
     category: 'State & Feedback',
     styleSchool: 'Corporate SaaS',
     route: '/tasks/13-skeleton-loading',
-    completed: false,
+    completed: true,
   },
   {
     id: 14,

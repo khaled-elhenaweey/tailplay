@@ -1,0 +1,32 @@
+# Task 13 — Skeleton Loading Screens
+
+**Category:** State & Feedback
+**Difficulty:** above-average
+**Style school:** Corporate SaaS
+
+## The problem
+
+A loading screen whose shapes match the final content's layout exactly,
+instead of a generic spinner.
+
+## Constraints
+
+- The shimmer effect must be a moving gradient — no images.
+
+## Key implementation decisions
+
+- `isLoading` is a plain signal toggled by a button, so both the loading and
+  loaded states can be inspected on demand without waiting on a real network
+  call.
+- The shimmer uses `[background:linear-gradient(...)]` with `var(--color-*)`
+  CSS variables — not the v3-era `theme()` function, which no longer applies
+  to arbitrary values in v4 CSS-first configuration.
+- `[background-size:200%_100%]` gives the gradient room to move within the
+  element, combined with Tailwind's built-in `animate-pulse` for the motion.
+- Each skeleton block's size (`h-32`, `h-4 w-3/4`, `h-3 w-1/2`, `h-8 w-24`)
+  matches the corresponding real element in the `@else` branch exactly, so
+  the loading state previews the actual layout instead of a generic shape.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

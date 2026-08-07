@@ -75,4 +75,11 @@ export const routes: Routes = [
         (m) => m.ActivityTimeline,
       ),
   },
+  {
+    path: 'tasks/13-skeleton-loading',
+    loadComponent: () =>
+      import('./tasks/state-feedback/skeleton-loading/skeleton-loading').then(
+        (m) => m.SkeletonLoading,
+      ),
+  },
 ];
