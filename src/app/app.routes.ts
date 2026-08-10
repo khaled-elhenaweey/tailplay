@@ -87,4 +87,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/state-feedback/empty-state/empty-state').then((m) => m.EmptyState),
   },
+  {
+    path: 'tasks/15-error-page',
+    loadComponent: () =>
+      import('./tasks/state-feedback/error-page/error-page').then((m) => m.ErrorPage),
+  },
 ];

@@ -1,0 +1,30 @@
+# Task 15 — Error / 500 Page
+
+**Category:** State & Feedback
+**Difficulty:** advanced
+**Style school:** Neo-Retro
+
+## The problem
+
+An error page with a friendly visual tone instead of a dry technical
+message, softening the experience when something breaks.
+
+## Constraints
+
+- No image of any kind — every visual element is a plain CSS shape.
+
+## Key implementation decisions
+
+- The "sad face" is a single circle (`rounded-full bg-brand-100`) with two
+  small rotated squares as eyes and a short, thick bottom-border arc as the
+  mouth — all built from `span`/`div` box shapes.
+- Avoided combining a Tailwind transform utility (`-translate-x-1/2`) with
+  an arbitrary `[transform:...]` value on the same element — both target the
+  same `transform` CSS property, and only one would have taken effect
+  depending on CSS output order. The mouth uses the utility class alone.
+- `flex-1` on the content wrapper centers everything vertically in the
+  remaining space below the back link, without needing a fixed height.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

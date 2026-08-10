@@ -156,7 +156,7 @@ export const TASKS: Task[] = [
     category: 'State & Feedback',
     styleSchool: 'Neo-Retro',
     route: '/tasks/15-error-page',
-    completed: false,
+    completed: true,
   },
   {
     id: 16,
