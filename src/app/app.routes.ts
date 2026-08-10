@@ -82,4 +82,9 @@ export const routes: Routes = [
         (m) => m.SkeletonLoading,
       ),
   },
+  {
+    path: 'tasks/14-empty-state',
+    loadComponent: () =>
+      import('./tasks/state-feedback/empty-state/empty-state').then((m) => m.EmptyState),
+  },
 ];

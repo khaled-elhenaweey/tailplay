@@ -146,7 +146,7 @@ export const TASKS: Task[] = [
     category: 'State & Feedback',
     styleSchool: 'Minimalism',
     route: '/tasks/14-empty-state',
-    completed: false,
+    completed: true,
   },
   {
     id: 15,

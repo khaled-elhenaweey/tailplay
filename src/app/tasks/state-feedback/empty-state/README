@@ -1,0 +1,28 @@
+# Task 14 — Empty State
+
+**Category:** State & Feedback
+**Difficulty:** above-average
+**Style school:** Minimalism
+
+## The problem
+
+A "nothing here yet" screen with a simple illustration and a clear call to
+action, typically the first thing a new user sees before adding any data.
+
+## Constraints
+
+- The illustration must be built from plain CSS shapes only — no icon
+  library and no image/SVG asset.
+
+## Key implementation decisions
+
+- The "empty folder" illustration is three absolutely positioned `div`s
+  inside a `relative` container: a body rectangle, a small tab rectangle
+  above it (`rounded-t-md`), and a dashed-border rectangle layered on top
+  via DOM order to suggest an open, empty opening.
+- No icon font or SVG is used anywhere — the entire visual relies on
+  Tailwind's box, border, and radius utilities.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_
