@@ -166,7 +166,7 @@ export const TASKS: Task[] = [
     category: 'State & Feedback',
     styleSchool: 'Corporate SaaS',
     route: '/tasks/16-toast-notifications',
-    completed: false,
+    completed: true,
   },
   {
     id: 17,

@@ -1,0 +1,36 @@
+# Task 16 — Stacked Toast Notifications
+
+**Category:** State & Feedback
+**Difficulty:** advanced
+**Style school:** Corporate SaaS
+
+## The problem
+
+Multiple notifications that stack in a sensible order and dismiss
+themselves automatically after a short delay.
+
+## Constraints
+
+- Severity colors must be soft/muted, not the typical loud green/yellow/red
+  pattern.
+
+## Key implementation decisions
+
+- `toasts` is a signal holding an array; adding a toast appends to the end
+  (`[...current, newToast]`), so the newest toast stacks at the bottom in a
+  predictable, consistent order.
+- Dismissal (manual or automatic via `setTimeout`) uses `.filter()` to
+  return a new array without the dismissed toast, following the same
+  immutability pattern used for `activeCategories` on the home page.
+- Severity is distinguished by shade, not hue: success uses `brand-50` (a
+  light tint of the single brand color), warning uses neutral `100`, and
+  error uses a slightly darker neutral `200` — differentiated by intensity
+  within the existing token scale rather than introducing separate red/
+  yellow/green colors.
+- The stack container uses `position: fixed` (not `sticky`, unlike task 04)
+  since it must stay pinned to a screen corner regardless of scroll
+  position, not tied to its place in the document flow.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

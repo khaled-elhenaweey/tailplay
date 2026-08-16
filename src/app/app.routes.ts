@@ -92,4 +92,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/state-feedback/error-page/error-page').then((m) => m.ErrorPage),
   },
+  {
+    path: 'tasks/16-toast-notifications',
+    loadComponent: () =>
+      import('./tasks/state-feedback/toast-notifications/toast-notifications').then(
+        (m) => m.ToastNotifications,
+      ),
+  },
 ];
