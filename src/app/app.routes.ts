@@ -99,4 +99,11 @@ export const routes: Routes = [
         (m) => m.ToastNotifications,
       ),
   },
+  {
+    path: 'tasks/17-progress-indicators',
+    loadComponent: () =>
+      import('./tasks/state-feedback/progress-indicators/progress-indicators').then(
+        (m) => m.ProgressIndicators,
+      ),
+  },
 ];

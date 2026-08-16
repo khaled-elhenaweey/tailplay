@@ -176,7 +176,7 @@ export const TASKS: Task[] = [
     category: 'State & Feedback',
     styleSchool: 'Material Design 3',
     route: '/tasks/17-progress-indicators',
-    completed: false,
+    completed: true,
   },
   {
     id: 18,

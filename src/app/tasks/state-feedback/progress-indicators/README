@@ -1,0 +1,34 @@
+# Task 17 — Progress Indicators Set
+
+**Category:** State & Feedback
+**Difficulty:** near-senior
+**Style school:** Material Design 3
+
+## The problem
+
+Three progress patterns shown on one page — linear, circular, and
+stepped — each suited to a different real-world use case (file upload,
+profile completeness, signup flow).
+
+## Constraints
+
+- The circular indicator must be built with `conic-gradient`, no SVG.
+
+## Key implementation decisions
+
+- A single `percent` signal drives both the linear bar (`[style.width.%]`)
+  and the circular indicator, so switching the value updates both at once
+  for direct comparison.
+- The circular indicator uses a full `[style]="'background: conic-gradient(...)'"`
+  binding rather than a Tailwind class, since the gradient's angle is a
+  computed value (`percent() * 3.6`, converting a 0-100 percentage to
+  0-360 degrees) — too dynamic for a static utility or arbitrary value.
+- A smaller white circle (`absolute inset-2`) sits on top of the gradient
+  circle to create a "donut" ring look instead of a solid filled disc.
+- The stepped indicator computes each connector line and step circle's
+  color from `currentStep()` via class bindings, with `@if (!last)` used to
+  skip rendering a connector after the final step.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_
