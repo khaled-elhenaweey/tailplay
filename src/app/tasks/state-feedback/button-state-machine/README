@@ -1,0 +1,33 @@
+# Task 18 — Button State Machine
+
+**Category:** State & Feedback
+**Difficulty:** near-senior
+**Style school:** Neumorphism
+
+## The problem
+
+A button that visually morphs through idle, loading, success, and error
+states — a common pattern for any real submit/save action.
+
+## Constraints
+
+- Every state is a separate, explicit class controlled by an Angular
+  signal — not a single generic "loading: true/false" flag.
+
+## Key implementation decisions
+
+- `state` is a signal typed as `'idle' | 'loading' | 'success' | 'error'`,
+  and `simulateSubmit` refuses to run again while not `idle`, mirroring a
+  real state machine where transitions are only valid from specific states.
+- `@switch (state())` renders the button's inner content per state — chosen
+  over a chain of `@if`/`@else if` since there are more than two distinct
+  branches.
+- `[disabled]="state() !== 'idle'"` disables the button functionally, not
+  just visually, whenever it isn't safe to click again.
+- The loading spinner is a small circle with `animate-spin` and a
+  transparent top border (`border-t-transparent`) — a lightweight way to
+  fake a spinner without SVG.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

@@ -1,0 +1,35 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #18 — Button State Machine
+  </h1>
+  <div class="flex flex-wrap items-center gap-4">
+    <button type="button" (click)="simulateSubmit('success')"
+      class="flex w-40 items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200"
+      [class.bg-brand-500]="state() === 'idle' || state() === 'loading'"
+      [class.text-white]="state() === 'idle' || state() === 'loading' || state() === 'success' || state() === 'error'"
+      [class.hover:bg-brand-600]="state() === 'idle'" [class.bg-neutral-700]="state() === 'success'"
+      [class.bg-neutral-900]="state() === 'error'" [disabled]="state() !== 'idle'">
+      @switch (state()) {
+      @case ('loading') {
+      <span class="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
+      <span>Saving...</span>
+      }
+      @case ('success') {
+      <span>Saved</span>
+      }
+      @case ('error') {
+      <span>Failed</span>
+      }
+      @default {
+      <span>Save changes</span>
+      }
+      }
+    </button>
+    <button type="button" (click)="simulateSubmit('error')" class="text-sm text-neutral-400 hover:text-neutral-600">
+      (trigger error instead)
+    </button>
+  </div>
+</div>

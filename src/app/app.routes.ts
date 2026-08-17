@@ -106,4 +106,11 @@ export const routes: Routes = [
         (m) => m.ProgressIndicators,
       ),
   },
+  {
+    path: 'tasks/18-button-state-machine',
+    loadComponent: () =>
+      import('./tasks/state-feedback/button-state-machine/button-state-machine').then(
+        (m) => m.ButtonStateMachine,
+      ),
+  },
 ];

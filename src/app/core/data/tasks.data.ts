@@ -186,7 +186,7 @@ export const TASKS: Task[] = [
     category: 'State & Feedback',
     styleSchool: 'Neumorphism',
     route: '/tasks/18-button-state-machine',
-    completed: false,
+    completed: true,
   },
 
   // ===== Forms & Input =====
