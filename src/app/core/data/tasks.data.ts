@@ -198,7 +198,7 @@ export const TASKS: Task[] = [
     category: 'Forms & Input',
     styleSchool: 'Corporate SaaS',
     route: '/tasks/19-multi-step-form',
-    completed: false,
+    completed: true,
   },
   {
     id: 20,

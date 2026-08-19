@@ -113,4 +113,9 @@ export const routes: Routes = [
         (m) => m.ButtonStateMachine,
       ),
   },
+  {
+    path: 'tasks/19-multi-step-form',
+    loadComponent: () =>
+      import('./tasks/forms-input/multi-step-form/multi-step-form').then((m) => m.MultiStepForm),
+  },
 ];

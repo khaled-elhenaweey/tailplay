@@ -1,0 +1,51 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #19 — Multi-Step Form Wizard
+  </h1>
+  <div class="max-w-lg rounded-xl bg-white p-6 shadow-sm">
+    <app-stepper [steps]="steps" [currentIndex]="currentIndex()" />
+
+    <div class="mt-8">
+      @switch (currentIndex()) {
+      @case (0) {
+      <div class="flex flex-col gap-3">
+        <input type="email" placeholder="Email Address" class="rounded-lg border border-neutral-300 p-2.5 text-sm">
+        <input type="password" placeholder="Password" class="rounded-lg border border-neutral-300 p-2.5 text-sm">
+      </div>
+      }
+      @case (1) {
+      <div class="flex flex-col gap-3">
+        <input type="text" placeholder="Full name" class="rounded-lg border border-neutral-300 p-2.5 text-sm">
+        <input type="text" placeholder="Job title" class="rounded-lg border border-neutral-300 p-2.5 text-sm">
+      </div>
+      }
+      @case (2) {
+      <p class="text-sm text-neutral-600">
+        Please review your information before submitting. This is the last step.
+      </p>
+      }
+      }
+    </div>
+    <div class="mt-8 flex justify-end gap-2">
+      <button type="button" (click)="goBack()"
+        class="rounded-lg px-4 py-2 text-sm text-neutral-600 bg-neutral-200 hover:bg-neutral-300 disabled:opacity-75 disabled:cursor-not-allowed"
+        [disabled]="currentIndex() === 0">
+        Back
+      </button>
+      @if (currentIndex() < steps.length - 1) { <button type="button" (click)="goNext()"
+        class="rounded-lg px-4 py-2 text-sm bg-brand-500 text-white hover:bg-brand-600">
+        Next
+        </button>
+        }
+        @else {
+
+        <button type="button" class="rounded-lg px-4 py-2 text-sm bg-brand-500 text-white hover:bg-brand-600">
+          Submit
+        </button>
+        }
+    </div>
+  </div>
+</div>

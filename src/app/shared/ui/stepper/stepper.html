@@ -1,0 +1,26 @@
+<div class="flex items-center">
+  @for (step of steps(); track step; let i = $index; let last = $last) {
+  <div class="flex items-center" [class.flex-1]="!last">
+    <div class="flex flex-col items-center">
+      <span class="flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold"
+        [class.bg-brand-500]="stateFor(i) === 'done' || stateFor(i) === 'active'"
+        [class.text-white]="stateFor(i) === 'done' || stateFor(i) === 'active'"
+        [class.bg-neutral-200]="stateFor(i) === 'upcoming'" [class.text-neutral-500]="stateFor(i) === 'upcoming'">
+        @if (stateFor(i) === 'done') {
+        ✓
+        } @else {
+        {{ i + 1 }}
+        }
+      </span>
+      <span class="mt-1 text-xs" [class.text-neutral-900]="stateFor(i) !== 'upcoming'"
+        [class.text-neutral-400]="stateFor(i) === 'upcoming'">
+        {{ step }}
+      </span>
+    </div>
+    @if (!last) {
+    <span class="mx-2 h-px flex-1" [class.bg-brand-500]="stateFor(i) === 'done'"
+      [class.bg-neutral-200]="stateFor(i) !== 'done'"></span>
+    }
+  </div>
+  }
+</div>
