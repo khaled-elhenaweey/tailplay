@@ -1,0 +1,35 @@
+# Task 20 — Floating Label Inputs
+
+**Category:** Forms & Input
+**Difficulty:** above-average
+**Style school:** Minimalism
+
+## The problem
+
+Labels that float above an input automatically on focus or once the field
+has content, without any JavaScript.
+
+## Constraints
+
+- Must be solved with `:has()`/`peer` only, no JS.
+
+## Key implementation decisions
+
+- `placeholder=" "` (a single space, not empty) is required — the CSS
+  `:placeholder-shown` pseudo-class only applies when the input both has a
+  placeholder attribute and is empty. An empty string or missing attribute
+  doesn't reliably trigger the selector across browsers.
+- `peer` on the input plus `peer-focus:*` on the label handles the "raised
+  while typing" state.
+- `peer-not-placeholder-shown:*` handles the equally important "raised
+  after blur, if filled" state — without it, the label would drop back down
+  over typed text the moment the input loses focus.
+- `pointer-events-none` on the label prevents it from intercepting clicks
+  that should pass through to the input underneath.
+- Solved entirely with `peer` for this task; `:has()` is used elsewhere in
+  the project for the opposite relationship (parent reacting to child
+  state), which doesn't apply here.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

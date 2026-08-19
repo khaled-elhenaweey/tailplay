@@ -118,4 +118,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/forms-input/multi-step-form/multi-step-form').then((m) => m.MultiStepForm),
   },
+  {
+    path: 'tasks/20-floating-labels',
+    loadComponent: () =>
+      import('./tasks/forms-input/floating-labels/floating-labels').then((m) => m.FloatingLabels),
+  },
 ];

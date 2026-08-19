@@ -208,7 +208,7 @@ export const TASKS: Task[] = [
     category: 'Forms & Input',
     styleSchool: 'Minimalism',
     route: '/tasks/20-floating-labels',
-    completed: false,
+    completed: true,
   },
   {
     id: 21,
