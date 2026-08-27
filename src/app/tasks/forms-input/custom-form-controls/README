@@ -1,0 +1,34 @@
+# Task 21 — Custom Form Controls
+
+**Category:** Forms & Input
+**Difficulty:** above-average
+**Style school:** Material Design 3
+
+## The problem
+
+Select, checkbox, radio, and switch inputs styled consistently with the
+project's design system — default browser form controls vary wildly in
+appearance and are hard to restyle directly.
+
+## Constraints
+
+- Must start from `@tailwindcss/forms` as a base reset for the native
+  controls.
+
+## Key implementation decisions
+
+- Installed `@tailwindcss/forms` and loaded it via `@plugin
+"@tailwindcss/forms";` in `styles.css` — the project's first plugin.
+- With the plugin's reset applied, `<select>`, checkbox, and radio inputs
+  accept simple utilities directly (`text-brand-500` colors the checkmark/
+  dot, `focus:ring-brand-500` gives a consistent focus ring) instead of
+  fighting inconsistent native browser styling.
+- The switch is built entirely from scratch (a `<button>` with a moving
+  inner `<span>`), not a hidden native checkbox, since its state and
+  animation are fully custom. `role="switch"` and `[attr.aria-checked]`
+  (an attribute binding, since `aria-checked` isn't a real DOM property on
+  `<button>`) keep it accessible to screen readers.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

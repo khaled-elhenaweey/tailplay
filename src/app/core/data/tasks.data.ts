@@ -219,7 +219,7 @@ export const TASKS: Task[] = [
     category: 'Forms & Input',
     styleSchool: 'Material Design 3',
     route: '/tasks/21-custom-form-controls',
-    completed: false,
+    completed: true,
   },
   {
     id: 22,

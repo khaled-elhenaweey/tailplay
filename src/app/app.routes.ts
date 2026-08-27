@@ -123,4 +123,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/forms-input/floating-labels/floating-labels').then((m) => m.FloatingLabels),
   },
+  {
+    path: 'tasks/21-custom-form-controls',
+    loadComponent: () =>
+      import('./tasks/forms-input/custom-form-controls/custom-form-controls').then(
+        (m) => m.CustomFormControls,
+      ),
+  },
 ];

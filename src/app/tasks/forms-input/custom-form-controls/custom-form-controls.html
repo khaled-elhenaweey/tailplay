@@ -1,0 +1,48 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #21 — Custom Form Controls
+  </h1>
+
+  <div class="flex max-w-sm flex-col gap-6 rounded-xl bg-white p-6 shadow-sm">
+    <!-- select -->
+    <div>
+      <label class="mb-1 block text-sm font-medium text-neutral-700"></label>
+      <select class="w-full rounded-lg border-neutral-300 text-sm focus:border-brand-500 focus:ring-brand-500">
+        <option>Egypt</option>
+        <option>United Arab Emirates</option>
+        <option>Saudi Arabia</option>
+      </select>
+    </div>
+    <!-- Checkbox -->
+    <label class="flex items-center gap-2 text-sm text-neutral-700">
+      <input type="checkbox" class="rounded text-brand-500 focus:ring-brand-500" checked>
+      I agree to the terms and conditions
+    </label>
+    <!-- Radio group -->
+    <div>
+      <p class="mb-2 text-sm font-medium text-neutral-700">Plan</p>
+      <div class="flex flex-col gap-2">
+        <label class="flex items-center gap-2 text-sm text-neutral-700">
+          <input type="radio" name="plan" class="text-brand-500 focus:ring-brand-500">
+          Monthly
+        </label>
+        <label class="flex items-center gap-2 text-sm text-neutral-700">
+          <input type="radio" name="plan" class="text-brand-500 focus:ring-brand-500">
+          Yearly
+        </label>
+      </div>
+    </div>
+    <div class="flex items-center justify-between">
+      <span class="text-sm text-neutral-700">Email notifications</span>
+      <button type="button" role="switch" [attr.aria-checked]="notificationsEnabled()" (click)="toggleNotifications()"
+        class="relative h-6 w-11 rounded-full transition-colors" [class.bg-brand-500]="notificationsEnabled()"
+        [class.bg-neutral-300]="!notificationsEnabled()">
+        <span class="absolute top-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform"
+          [class.-translate-x-5]="notificationsEnabled()" [class.translate-x-0.5]="!notificationsEnabled()"></span>
+      </button>
+    </div>
+  </div>
+</div>
