@@ -1,0 +1,34 @@
+# Task 22 — Inline Validation States
+
+**Category:** Forms & Input
+**Difficulty:** advanced
+**Style school:** Corporate SaaS
+
+## The problem
+
+Fields that show error or success state immediately, with a matching
+helper message, as the user types.
+
+## Constraints
+
+- All visual state changes must be driven by `group`/`:has()` — no JS
+  toggling classes.
+
+## Key implementation decisions
+
+- Validation itself comes from native HTML5 attributes (`type="email"`,
+  `required`, `minlength`), which the browser evaluates into `:valid`/
+  `:invalid` states automatically — no manual validation logic.
+- Border color uses `valid:not-placeholder-shown:` so an empty-but-valid
+  field (nothing typed yet) doesn't turn green prematurely.
+- Success/error messages live as separate `<p>` elements outside the input,
+  each shown via `group-has-[...]:block` on the wrapping `.group` — chosen
+  over `peer` since two different sibling messages need to react to the
+  same input's state, which `:has()` on the group handles more directly.
+- The error message adds `:not(:focus)` to its selector so it only appears
+  after the user leaves an invalid field (on blur), not while still typing
+  mid-entry.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

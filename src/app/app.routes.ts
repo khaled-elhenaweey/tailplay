@@ -130,4 +130,11 @@ export const routes: Routes = [
         (m) => m.CustomFormControls,
       ),
   },
+  {
+    path: 'tasks/22-inline-validation',
+    loadComponent: () =>
+      import('./tasks/forms-input/inline-validation/inline-validation').then(
+        (m) => m.InlineValidation,
+      ),
+  },
 ];

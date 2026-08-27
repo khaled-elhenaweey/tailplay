@@ -229,7 +229,7 @@ export const TASKS: Task[] = [
     category: 'Forms & Input',
     styleSchool: 'Corporate SaaS',
     route: '/tasks/22-inline-validation',
-    completed: false,
+    completed: true,
   },
   {
     id: 23,

@@ -1,0 +1,39 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #22 — Inline Validation States
+  </h1>
+  <p class="mb-4 max-w-sm text-sm text-neutral-500">
+    Type an invalid email, then a valid one, to see the field react live —
+    all handled by native HTML5 validation + CSS, no JS.
+  </p>
+
+  <form class="max-w-sm flex flex-col gap-5 rounded-xl bg-white p-6 shadow-sm">
+    <div class="group">
+      <label for="email" class="mb-1 block text-sm font-medium text-neutral-700">
+        Email address
+      </label>
+      <input type="email" id="email" placeholder="you@example.com" required
+        class="w-full rounded-lg border p-2.5 text-sm outline-none transition-colors border-neutral-300 focus:border-brand-500 invalid:focus:border-neutral-400 valid:not-placeholder-shown:border-brand-500">
+      <small class="hidden text-xs text-neutral-500 mt-1 group-has-[:valid:not(placeholder-shown)]:block">
+        ✓ Looks good.
+      </small>
+      <small class="hidden text-xs text-neutral-600 mt-1 group-has-[:invalid:not(placeholder-shown):not(:focus)]:block">
+        Please enter a valid email address.
+      </small>
+
+    </div>
+    <div class="group">
+      <label for="email" class="mb-1 block text-sm font-medium text-neutral-700">
+        Username
+      </label>
+      <input type="text" id="username" required minlength="3" placeholder="At least 3 characters"
+        class="w-full rounded-lg border p-2.5 text-sm outline-none transition-colors border-neutral-300 focus:border-brand-500 invalid:focus:border-neutral-400 valid:not-placeholder-shown:border-brand-500">
+      <small class="hidden text-xs text-neutral-600 mt-1 group-has-[:invalid:not(placeholder-shown):not(:focus)]:block">
+        Username must be at least 3 characters.
+      </small>
+    </div>
+  </form>
+</div>
