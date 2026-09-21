@@ -1,0 +1,36 @@
+# Task 23 — File Upload Dropzone
+
+**Category:** Forms & Input
+**Difficulty:** near-senior
+**Style school:** Neubrutalism
+
+## The problem
+
+An upload area with idle, hover, dragging, and error states clearly
+distinguished from one another.
+
+## Constraints
+
+- All 4 visual states must be clearly distinguishable without relying on
+  extra explanatory text.
+
+## Key implementation decisions
+
+- `dragOver` must call `event.preventDefault()`, or the browser blocks the
+  `drop` event entirely by default — a common gotcha when building any
+  native drag-and-drop zone.
+- `state` (idle/dragging/error) is a signal driving both the border/
+  background colors and the message text via `@switch`.
+- `hover` is intentionally _not_ tracked as a fourth signal state. Since it
+  needs no logic beyond "is the pointer over this element right now," it's
+  handled with a plain Tailwind `hover:` variant directly in the class
+  list instead of JS-tracked state — kept simple on purpose, since the
+  project's goal is practicing Tailwind, not building unnecessarily
+  complex drag-and-drop logic.
+- Validation is intentionally minimal (image files only) purely to give a
+  concrete, visible trigger for the error state — not meant as production
+  file-validation logic.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

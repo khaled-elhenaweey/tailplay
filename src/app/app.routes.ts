@@ -137,4 +137,11 @@ export const routes: Routes = [
         (m) => m.InlineValidation,
       ),
   },
+  {
+    path: 'tasks/23-file-upload-dropzone',
+    loadComponent: () =>
+      import('./tasks/forms-input/file-upload-dropzone/file-upload-dropzone').then(
+        (m) => m.FileUploadDropzone,
+      ),
+  },
 ];

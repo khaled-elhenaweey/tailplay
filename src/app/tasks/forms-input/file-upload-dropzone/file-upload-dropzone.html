@@ -1,0 +1,31 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #23 — File Upload Dropzone
+  </h1>
+  <p class="mb-4 max-w-sm text-sm text-neutral-500">
+    Drag an image file over the box below. Drop a non-image file to see the error state.
+  </p>
+
+  <div
+    class="max-w-md h-48 flex flex-col items-center justify-center rounded-xl border-2 border-dashed p-6 text-center transition-colors"
+    (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)" (dragover)="onDragOver($event)"
+    (drop)="onDrop($event)" [class.border-neutral-300]="state() === 'idle'" [class.bg-white]="state() === 'idle'"
+    [class.border-brand-500]="state() === 'dragging'" [class.bg-brand-50]="state() === 'dragging'"
+    [class.border-red-500]="state() === 'error'" [class.bg-neutral-50]="state() === 'error'">
+    @switch (state()) {
+    @case ('dragging') {
+    <p class="text-sm font-medium text-brand-700">Release to upload</p>
+    }
+    @case ('error') {
+    <p class="text-sm font-medium text-neutral-700">Only image files are supported</p>
+    }
+    @default {
+    <p class="text-sm text-neutral-500">Drag and drop a file here</p>
+    }
+    }
+  </div>
+
+</div>

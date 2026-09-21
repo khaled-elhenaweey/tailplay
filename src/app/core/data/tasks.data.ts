@@ -239,7 +239,7 @@ export const TASKS: Task[] = [
     category: 'Forms & Input',
     styleSchool: 'Neubrutalism',
     route: '/tasks/23-file-upload-dropzone',
-    completed: false,
+    completed: true,
   },
   {
     id: 24,
