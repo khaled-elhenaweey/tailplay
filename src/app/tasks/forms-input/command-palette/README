@@ -1,0 +1,31 @@
+# Task 24 — Command Palette Shell
+
+**Category:** Forms & Input
+**Difficulty:** near-senior
+**Style school:** Dark Cyber
+
+## The problem
+
+A quick-search (Cmd+K style) interface shell — the visual layer only, with
+no real search/filter logic behind it.
+
+## Constraints
+
+- Dark background with visual focus placed entirely on the search field.
+
+## Key implementation decisions
+
+- The overlay uses `bg-neutral-950/70`, the darkest step of the token
+  scale at 70% opacity, and the palette panel itself is `bg-neutral-900` —
+  the first task to use a dark surface as its primary style rather than an
+  accent within a light layout.
+- Centering the `fixed` panel uses `left-1/2 -translate-x-1/2` instead of
+  `mx-auto`, since `mx-auto` doesn't reliably center a `fixed`-positioned
+  element the way it does one still in normal document flow.
+- `highlightedIndex` is a fixed signal, always `0` — intentionally static
+  rather than driven by real keyboard navigation (arrow up/down), matching
+  the constraint that this is a visual shell only, not functional search.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

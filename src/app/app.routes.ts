@@ -144,4 +144,9 @@ export const routes: Routes = [
         (m) => m.FileUploadDropzone,
       ),
   },
+  {
+    path: 'tasks/24-command-palette',
+    loadComponent: () =>
+      import('./tasks/forms-input/command-palette/command-palette').then((m) => m.CommandPalette),
+  },
 ];

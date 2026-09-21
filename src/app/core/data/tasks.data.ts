@@ -249,7 +249,7 @@ export const TASKS: Task[] = [
     category: 'Forms & Input',
     styleSchool: 'Dark Cyber',
     route: '/tasks/24-command-palette',
-    completed: false,
+    completed: true,
   },
 
   // ===== Navigation =====

@@ -1,0 +1,41 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <div class="my-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold text-neutral-900">
+      Task #24 — Command Palette Shell
+    </h1>
+    <button type="button" (click)="togglePalette()"
+      class="rounded-lg bg-brand-500 hover:bg-brand-600 text-white text-sm px-4 py-2 ">
+      Open palette
+    </button>
+  </div>
+  @if (isOpen()) {
+  <div class="fixed inset-0 bg-neutral-950/70" (click)="togglePalette()">
+
+  </div>
+  <div
+    class="fixed left-1/2 top-1/2 w-full max-w-lg -translate-1/2 overflow-hidden rounded-xl bg-neutral-900 shadow-xl">
+    <div class="flex items-center gap-3 border-b border-neutral-800 px-4 py-3">
+      <span class="text-neutral-500">⌘K</span>
+      <input type="text" placeholder="Type a command or search..." autofocus
+        class="w-full bg-transparent text-sm text-neutral-100 placeholder-neutral-500 outline-none">
+    </div>
+    <ul class="max-h-72 overflow-y-auto p-2">
+      @for (command of commands; track command.label; let i = $index) {
+      <li class="flex items-center justify-between rounded-lg px-3 py-2 text-sm"
+        [class.bg-neutral-800]="i === highlightedIndex()" [class.text-neutral-100]="i === highlightedIndex()"
+        [class.text-neutral-400]="i !== highlightedIndex()">
+        <span>
+          {{ command.label }}
+        </span>
+        <span class="font-mono text-xs text-neutral-500">
+          {{ command.shortcut }}
+        </span>
+      </li>
+      }
+    </ul>
+  </div>
+  }
+</div>
