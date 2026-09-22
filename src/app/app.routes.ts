@@ -156,4 +156,11 @@ export const routes: Routes = [
         (m) => m.ResponsiveNavbar,
       ),
   },
+  {
+    path: 'tasks/26-truncating-breadcrumbs',
+    loadComponent: () =>
+      import('./tasks/navigation/truncating-breadcrumbs/truncating-breadcrumbs').then(
+        (m) => m.TruncatingBreadcrumbs,
+      ),
+  },
 ];

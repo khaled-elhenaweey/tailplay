@@ -1,0 +1,31 @@
+# Task 26 — Truncating Breadcrumbs
+
+**Category:** Navigation
+**Difficulty:** above-average
+**Style school:** Corporate SaaS
+
+## The problem
+
+A long breadcrumb trail that must collapse its middle items on small
+screens so it doesn't overflow or wrap awkwardly.
+
+## Constraints
+
+- Middle items must be hidden purely via responsive utilities — no JS
+  measuring the trail's length or width.
+
+## Key implementation decisions
+
+- The first and last crumbs always stay visible (`Home` and the current
+  page), matching the standard breadcrumb truncation convention — the user
+  always knows the start and end of the path.
+- `$first`/`$last` from the `@for` loop identify the endpoints without any
+  manual index math.
+- For the middle crumbs, both a `"..."` placeholder (`sm:hidden`) and the
+  actual crumb text (`hidden sm:inline`) exist in the DOM at all times;
+  Tailwind's responsive variants alone decide which one renders at a given
+  screen size — no JavaScript calculates path length or truncates text.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

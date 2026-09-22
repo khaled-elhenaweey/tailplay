@@ -271,7 +271,7 @@ export const TASKS: Task[] = [
     category: 'Navigation',
     styleSchool: 'Corporate SaaS',
     route: '/tasks/26-truncating-breadcrumbs',
-    completed: false,
+    completed: true,
   },
   {
     id: 27,

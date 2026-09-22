@@ -1,0 +1,35 @@
+<div class="min-h-screen bg-neutral-50 p-6 font-sans">
+  <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+    ← Back to all tasks
+  </a>
+  <h1 class="my-4 text-2xl font-bold text-neutral-900">
+    Task #26 — Truncating Breadcrumbs
+  </h1>
+  <p class="mb-4 max-w-sm text-sm text-neutral-500">
+    Resize the window below 640px — the middle crumbs collapse into "...".
+  </p>
+  <nav class="flex items-center gap-1 rounded-lg bg-white p-3 text-sm shadow-sm">
+    @for (crumb of crumbs; track crumb; let first = $first; let last = $last; let i = $index) {
+    @if (first || last) {
+    <span [class.text-neutral-900]="last" [class.font-medium]="last" [class.text-neutral-500]="!last">
+      {{ crumb }}
+    </span>
+    } @else if (i === 1) {
+    <span class="text-neutral-400 sm:hidden">
+      ...
+    </span>
+    <span class="hidden text-neutral-500 sm:inline">
+      {{ crumb }}
+    </span>
+    } @else {
+    <span class="hidden text-neutral-500 sm:inline">
+      {{ crumb }}
+    </span>
+    }
+
+    @if (!last) {
+    <span class="text-neutral-300">/</span>
+    }
+    }
+  </nav>
+</div>
