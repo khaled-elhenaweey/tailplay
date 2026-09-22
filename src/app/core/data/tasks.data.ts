@@ -281,7 +281,7 @@ export const TASKS: Task[] = [
     category: 'Navigation',
     styleSchool: 'Material Design 3',
     route: '/tasks/27-animated-tabs',
-    completed: false,
+    completed: true,
   },
   {
     id: 28,

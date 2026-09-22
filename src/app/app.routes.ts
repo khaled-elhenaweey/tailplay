@@ -163,4 +163,9 @@ export const routes: Routes = [
         (m) => m.TruncatingBreadcrumbs,
       ),
   },
+  {
+    path: 'tasks/27-animated-tabs',
+    loadComponent: () =>
+      import('./tasks/navigation/animated-tabs/animated-tabs').then((m) => m.AnimatedTabs),
+  },
 ];
