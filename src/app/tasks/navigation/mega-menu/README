@@ -1,0 +1,38 @@
+# Task 28 — Mega Menu
+
+**Category:** Navigation
+**Difficulty:** advanced
+**Style school:** Editorial
+
+## The problem
+
+A multi-column dropdown that opens on hover, with a smooth transition
+between hover and keyboard focus states.
+
+## Constraints
+
+- The gap between the trigger button and the panel must not close the
+  menu when the mouse crosses it.
+
+## Key implementation decisions
+
+- No signal or JS state is used at all — the entire interaction is CSS
+  `:hover`/`:focus-within` via Tailwind's `group`, consistent with keeping
+  hover-only logic in CSS rather than JS state (same reasoning as the
+  dropzone's hover handling in task 23).
+- A transparent "bridge" element (`absolute h-2 w-full` positioned exactly
+  in the gap) fills the space between the button and the panel. Since it's
+  still inside the same `.group`, the pointer never technically leaves the
+  group while moving from the button down into the panel, so `group-hover`
+  never gets interrupted.
+- `group-focus-within:*` keeps the panel open whenever keyboard focus lands
+  on anything inside it (Tab navigation), independent of mouse position —
+  necessary so keyboard-only users get the same experience as mouse users.
+- The panel combines `invisible`/`visible` with `opacity-0`/`opacity-100`:
+  opacity alone gives a smooth fade, but `invisible` is what actually
+  prevents clicking a still-transparent, technically-present panel while
+  it's closed.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_

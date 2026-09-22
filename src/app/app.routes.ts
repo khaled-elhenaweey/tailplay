@@ -168,4 +168,8 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/navigation/animated-tabs/animated-tabs').then((m) => m.AnimatedTabs),
   },
+  {
+    path: 'tasks/28-mega-menu',
+    loadComponent: () => import('./tasks/navigation/mega-menu/mega-menu').then((m) => m.MegaMenu),
+  },
 ];

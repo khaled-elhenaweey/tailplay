@@ -291,7 +291,7 @@ export const TASKS: Task[] = [
     category: 'Navigation',
     styleSchool: 'Editorial',
     route: '/tasks/28-mega-menu',
-    completed: false,
+    completed: true,
   },
   {
     id: 29,

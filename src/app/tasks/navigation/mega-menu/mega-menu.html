@@ -1,0 +1,41 @@
+<div class="min-h-screen bg-neutral-50 font-sans">
+  <nav class="border-b border-neutral-200 bg-white px-6 py-4">
+    <div class="group relative inline-block">
+      <button type="button" class="text-sm font-medium text-neutral-700 group-hover:text-brand-600">
+        Products ▾
+      </button>
+      <div class="absolute left-0 top-full h-2 w-full"></div>
+      <div class="invisible absolute left-0  top-[calc(100%+0.5rem)] z-20  w-120 grid grid-cols-3 gap-6
+      rounded-xl border border-neutral-200 bg-white p-6 opacity-0 shadow-lg transition-opacity duration-150
+      group-hover:visible group-hover:opacity-100  group-focus-within:visible group-focus-within:opacity-100
+      ">
+        @for (column of columns; track column.title) {
+        <div>
+          <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+            {{ column.title }}
+          </p>
+          <div class="flex flex-col gap-2">
+            @for (item of column.items; track item) {
+            <a routerLink="" class="text-sm text-neutral-600 hover:text-brand-600">
+              {{ item }}
+            </a>
+            }
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </nav>
+  <!-- content section -->
+  <div class="p-6">
+    <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+      ← Back to all tasks
+    </a>
+    <h1 class="my-4 text-2xl font-bold text-neutral-900">
+      Task #28 — Mega Menu
+    </h1>
+    <p class="text-sm text-neutral-500">
+      Hover "Products", then move down into the panel without the gap closing it.
+    </p>
+  </div>
+</div>
