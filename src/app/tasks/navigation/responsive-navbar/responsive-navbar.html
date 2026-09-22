@@ -1,0 +1,49 @@
+<div class="min-h-screen bg-neutral-50 font-sans">
+  <nav class="border-b border-neutral-200 bg-white px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a routerLink="/" class="text-sm font-bold text-neutral-900">
+        TailPlay Co.
+      </a>
+      <!-- desktop links -->
+      <div class="hidden gap-6 md:flex">
+        @for (link of navLinks; track link) {
+        <span class="text-sm text-neutral-600 hover:text-neutral-900">
+          {{link}}
+        </span>
+        }
+      </div>
+      <button type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()" aria-label="Toggle menu"
+        class="flex flex-col items-center justify-center gap-1.5 h-8 w-8 md:hidden">
+        <span class="h-0.5 w-6 rounded-full bg-neutral-700 transition-transform duration-200"
+          [class.translate-y-2]="isMenuOpen()" [class.rotate-45]="isMenuOpen()"></span>
+        <span class="h-0.5 w-6 rounded-full bg-neutral-700 transition-opacity duration-200"
+          [class.opacity-0]="isMenuOpen()"></span>
+        <span class="h-0.5 w-6 rounded-full bg-neutral-700 transition-transform duration-200"
+          [class.-translate-y-2]="isMenuOpen()" [class.-rotate-45]="isMenuOpen()"></span>
+      </button>
+    </div>
+    <!-- mobile menu -->
+    <div class="grid overflow-hidden transition-[grid-template-rows] duration-300 md:hidden"
+      [class.grid-rows-[1fr]]="isMenuOpen()" [class.grid-rows-[0fr]]="!isMenuOpen()">
+      <div class="flex flex-col gap-4 overflow-hidden pt-4">
+        @for (link of navLinks; track link) {
+        <span class="text-sm text-neutral-600 hover:text-neutral-900">
+          {{link}}
+        </span>
+        }
+      </div>
+    </div>
+  </nav>
+  <!-- content section -->
+  <div class="p-6">
+    <a routerLink="/" class="text-sm text-brand-600 hover:underline">
+      ← Back to all tasks
+    </a>
+    <h1 class="my-4 text-2xl font-bold text-neutral-900">
+      Task #25 — Responsive Navbar
+    </h1>
+    <p class="text-sm text-neutral-500">
+      Shrink the window below 768px and tap the hamburger icon.
+    </p>
+  </div>
+</div>

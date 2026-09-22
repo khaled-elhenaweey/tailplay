@@ -261,7 +261,7 @@ export const TASKS: Task[] = [
     category: 'Navigation',
     styleSchool: 'Minimalism',
     route: '/tasks/25-responsive-navbar',
-    completed: false,
+    completed: true,
   },
   {
     id: 26,

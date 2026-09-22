@@ -149,4 +149,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./tasks/forms-input/command-palette/command-palette').then((m) => m.CommandPalette),
   },
+  {
+    path: 'tasks/25-responsive-navbar',
+    loadComponent: () =>
+      import('./tasks/navigation/responsive-navbar/responsive-navbar').then(
+        (m) => m.ResponsiveNavbar,
+      ),
+  },
 ];

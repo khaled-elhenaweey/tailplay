@@ -1,0 +1,32 @@
+# Task 25 — Responsive Navbar
+
+**Category:** Navigation
+**Difficulty:** above-average
+**Style school:** Minimalism
+
+## The problem
+
+A navbar that collapses into a mobile menu with a smooth open/close
+transition — one of the most common UI patterns on the web.
+
+## Constraints
+
+- Menu open/close state and animation must use an Angular signal + CSS
+  transitions only, no animation library.
+
+## Key implementation decisions
+
+- The hamburger-to-X transform uses 3 bars: the top bar translates down and
+  rotates 45°, the middle bar fades out, and the bottom bar translates up
+  and rotates -45°, meeting the top bar to form an X shape.
+- The mobile menu's open/close animation uses `grid-template-rows`
+  (`grid-rows-[0fr]` to `grid-rows-[1fr]`) instead of `height`, avoiding the
+  classic CSS limitation that `height: auto` cannot be transitioned
+  smoothly. The inner content wrapper needs `overflow-hidden` to avoid
+  bleeding out while collapsed.
+- No Angular Animations module is used anywhere — the entire effect is CSS
+  `transition` on classes toggled by a signal.
+
+## Preview
+
+_(added later — screenshots are batched at the end of the project)_
